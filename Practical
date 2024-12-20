@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic JavaScript Example</title>
+</head>
+<body>
+    <h1>JavaScript Alert Example</h1>
+    <p>Click the link below to see a JavaScript alert:</p>
+    <a href="#" onclick="alert('Hey!');">Click me</a>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Content with JavaScript</title>
+</head>
+<body>
+    <h1>JavaScript Content Update Example</h1>
+    <p>Click the link below to change the content of the box:</p>
+    
+    <!-- This is the element where the content will be updated -->
+    <div id="box" style="padding: 10px; border: 1px solid #000; width: 200px; height: 100px; text-align: center;">
+        Original Content
+    </div>
+    
+    <p><a href="#" onclick="document.getElementById('box').innerHTML = 'You clicked it!';">Click me</a></p>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Tracker Example</title>
+</head>
+<body>
+    <h1>JavaScript Click Tracker</h1>
+    <p>Click the link below to add a new list item showing the number of times the link was clicked:</p>
+    
+    <!-- This is the element where the content will be updated -->
+    <div id="box" style="padding: 10px; border: 1px solid #000; width: 300px; height: auto;">
+        <ul>
+            <!-- This is where the list items will be added dynamically -->
+        </ul>
+    </div>
+    
+    <p><a href="#" onclick="updateClickCount(); return false;">Click me</a></p>
+
+    <script>
+        // Variable to track the number of clicks
+        let clickCount = 0;
+
+        // Function to update the click count and add a new list item
+        function updateClickCount() {
+            clickCount++;  // Increment the click count
+            const listItem = `<li>The link was pressed ${clickCount} times.</li>`; // Create the list item
+            // Update the innerHTML of the box with the new list item
+            document.querySelector('#box ul').innerHTML += listItem;
+        }
+    </script>
+</body>
+</html>
+<html>
+<head>
+    <title>Week 11</title>
+
+    <script>
+        // Initializing counter variable to track the number of clicks
+        counter = 0;
+
+        // Function to count and display clicks
+        function countClicks() {
+            counter = counter + 1;  // Increment counter
+            var output = 'The link was pressed ' + counter + ' times.';  // Generate output text
+            var element = document.getElementById('boxy');  // Get the element with ID 'boxy'
+            element.innerHTML = output;  // Update the inner HTML of the element with the new output
+        }
+    </script>
+
+</head>
+<body>
+    <h1>JavaScript Demo</h1>
+    <a href="#" onclick="countClicks();">Click me</a>  <!-- Link to trigger the countClicks function -->
+    <p id="boxy"></p>  <!-- Placeholder for displaying the count -->
+</body>
+</html>
+<a href="#" onclick="this.innerHTML = 'Clicked';">Click me</a>
+<html>
+<head>
+    <title>Week 11</title>
+
+    <script>
+        // Initialize the counter to track the number of clicks
+        counter = 0;
+
+        // Function to count clicks and modify the clicked element's content
+        function countClicks(element) {
+            counter = counter + 1;  // Increment counter by 1
+            var output = 'The link was pressed ' + counter + ' times.';  // Create output message
+            element.innerHTML = output;  // Update the clicked element's innerHTML
+        }
+    </script>
+
+</head>
+<body>
+    <h1>JavaScript Demo</h1>
+    <!-- Pass the clicked element (this) to the countClicks function -->
+    <a href="#" onclick="countClicks(this);">Click me</a> 
+</body>
+</html>
+<html>
+<head>
+    <title>Image Swap Example</title>
+</head>
+<body>
+
+    <h1>Image Swap Demo</h1>
+
+    <!-- Image tag with onmouseover and onmouseout events -->
+    <img src="http://www.outgrabe.net/cat01.jpg" 
+         onmouseover="this.src='http://www.outgrabe.net/cat02.jpg';" 
+         onmouseout="this.src='http://www.outgrabe.net/cat01.jpg';" />
+
+</body>
+</html>
+<html>
+<head>
+    <title>Image Swap with Function</title>
+
+    <script>
+        function swapImage(element, newSrc) {
+            element.src = newSrc;
+        }
+    </script>
+
+</head>
+<body>
+
+    <h1>Image Swap Demo with JavaScript Function</h1>
+
+    <img src="http://www.outgrabe.net/cat01.jpg" 
+         onmouseover="swapImage(this, 'http://www.outgrabe.net/cat02.jpg');" 
+         onmouseout="swapImage(this, 'http://www.outgrabe.net/cat01.jpg');" />
+
+</body>
+</html>
